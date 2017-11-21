@@ -1,0 +1,29 @@
+{% extends "template.html" %}
+{% block content %}
+	<h2> Welcome! You are now logged into Beatscrape.</h2>
+	<a href="/logout">Logout</a>
+	<br />
+	<br />
+	<br />
+	<h3> Beatport Tech House</h3>
+	<table class="table table-striped table-bordered table-hover table condensed">
+		<tr>
+			<th>Artist1</th>
+			<th>Song1</th>
+			<th>Label1</th>
+			<th>Price1</th>
+		</tr>
+		{% for item in info %}
+		<tr>
+			<td>{{ item.Artist }}</td> 
+			<td>{{ item.Song }}</td>
+			<td>{{ item.Label }}</td> 
+			<td>{{ item.Price }}</td>
+		</tr>	
+		{% endfor %}
+	</table>
+{% endblock %}
+
+
+
+

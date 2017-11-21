@@ -1,0 +1,29 @@
+
+{% block content %}
+
+	<h1> Enter the Artists you want to monitor!</h1>
+
+	<form method="POST" action="/scrapelist2">
+		<table>
+			<tr><td>Artist Name</td><td><input type="text" name="Producername" /></td></tr>
+		</table>
+
+	<input type="submit" value="Press Me!" />
+
+	</form>
+
+	<h2>Your Beatscrape Artists</h2>
+	<table>
+		{% for artist in pull %}
+		<tr><td>{{ artist.DJname }}</td>
+		<td>
+		<form action="{{url_for('delete_artist', id=artist.id)}}" method="post">
+					<input type="hidden" name="_method" value="DELETE">
+					<input type="submit" value="Delete" class="btn btn-danger">
+			</form>
+		</td>
+		</tr>
+		{% endfor %}
+	{% endblock %}
+
+

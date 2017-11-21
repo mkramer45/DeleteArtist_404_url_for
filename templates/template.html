@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Beatscrape</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+   </head>
+   <body>
+      <header>
+         <div class="navbar navbar-inverse">
+            <div class="navbar-inner">
+               <a class="navbar-brand" href="/">Real Python For The Web</a>
+               <ul class="nav navbar-nav">
+                  <li><a data-toggle="tab" href="/">Home</a></li>
+                  <li><a data-toggle="tab" href="/welcome">Welcome</a></li>
+                  <li><a data-toggle="tab" href="/log">Login</a></li>
+                  <li><a data-toggle="tab" href="/scrapelist2">ScrapeList2</a></li>
+               </ul>
+            </div>
+         </div>
+      </header>
+      <div class="container">
+         {% block content %}
+         {% endblock %}
+      </div>
+   </body>
+</html>
